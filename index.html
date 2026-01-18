@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gage Mace | Solution Leadership</title>
+    <meta name="description" content="Solution Engineering Leader bridging the gap between technical complexity and business impact.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            /* DAY MODE (Default) */
+            --bg-color: #F3F4F6;
+            --card-bg: #FFFFFF;
+            --text-main: #1F2937;
+            --text-muted: #4B5563;
+            --accent-forest: #2D3A3A; /* Deep Slate */
+            --accent-gold: #D4A373;   /* Ochre */
+            --border-color: #E5E7EB;
+        }
+
+        /* CAMPFIRE MODE (The Easter Egg) */
+        body.campfire-mode {
+            --bg-color: #1a2222;
+            --card-bg: #252e2e;
+            --text-main: #E5E7EB;
+            --text-muted: #A1A1AA;
+            --accent-forest: #D4A373; /* Gold becomes primary */
+            --border-color: #374151;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: all 0.5s ease; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--accent-forest); }
+        
+        /* --- NAV --- */
+        nav {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+        }
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
+        nav a { text-decoration: none; color: var(--text-main); margin-left: 30px; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover { color: var(--accent-gold); }
+
+        /* --- HERO --- */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 10%;
+        }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; align-items: center; }
+        
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 25px; }
+        .hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 35px; max-width: 500px; }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: var(--accent-forest);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+        .btn:hover { background-color: var(--accent-gold); color: #1a2222; transform: translateY(-2px); }
+
+        /* HERO IMAGE (Interactive) */
+        .hero-img-wrap { position: relative; cursor: pointer; }
+        .hero-img {
+            width: 100%;
+            height: 550px;
+            background-color: #ccc;
+            /* REPLACE THIS URL WITH YOUR PHOTO */
+            background-image: url('https://via.placeholder.com/600x800?text=Gage+Mace'); 
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-img::after {
+            content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px;
+            border: 2px solid var(--accent-forest); z-index: -1; border-radius: 8px;
+        }
+        .tooltip {
+            position: absolute; bottom: -30px; right: 0; font-size: 0.8rem; 
+            color: var(--text-muted); opacity: 0;
+        }
+        .hero-img-wrap:hover .tooltip { opacity: 1; }
+
+        /* --- SECTIONS --- */
+        section { padding: 100px 10%; max-width: 1400px; margin: 0 auto; }
+        .label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-gold); display: block; margin-bottom: 15px; }
+
+        /* --- ABOUT --- */
+        .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 60px; }
+        .about-content p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-muted); }
+
+        /* --- PHILOSOPHY --- */
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card {
+            background: var(--card-bg); padding: 40px; border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        .card h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .card p { color: var(--text-muted); }
+
+        /* --- CONTACT --- */
+        .contact-box {
+            text-align: center; max-width: 600px; margin: 0 auto;
+            background: var(--card-bg); padding: 50px; border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+        
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero-grid, .about-grid { grid-template-columns: 1fr; }
+            .hero-img { height: 400px; order: -1; }
+            h1 { font-size: 2.5rem; }
+            nav { position: relative; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Gage Mace</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#philosophy">Approach</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-grid">
+            <div class="hero-text" data-aos="fade-up">
+                <span class="label">Solution Leadership</span>
+                <h1>Navigating Complexity.<br>Architecting Impact.</h1>
+                <p>Bridging the gap between the wilderness and the boardroom. I help teams build resilience, trust, and executive presence.</p>
+                <a href="mailto:your-email@example.com" class="btn">Start the Conversation</a>
+            </div>
+            <div class="hero-img-wrap" id="modeTrigger" data-aos="fade-left">
+                <div class="hero-img"></div> <div class="tooltip">Click for Campfire Mode 🌲</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-content" data-aos="fade-up">
+                <span class="label">The Background</span>
+                <h2>Lessons from the Field</h2>
+                <br>
+                <p>I took an unconventional path to SaaS. Spending my early career guiding students through remote environments with <strong>Rustic Pathways</strong> taught me that in high-stakes scenarios, success rarely comes from rigid control—it comes from calm navigation and trust.</p>
+                
+                <p>I’ve found that these lessons are universal. Whether on a mountain pass or in a boardroom, my role remains the same: to be a <strong>Servant Leader</strong> who builds psychological safety, allowing the team to navigate complexity and deliver wonderful buyer experiences.</p>
+            </div>
+            <div style="background: var(--card-bg); padding: 30px; border-radius: 8px;" data-aos="fade-up" data-aos-delay="100">
+                <h3 style="margin-bottom: 20px;">Focus Areas</h3>
+                <ul style="list-style: none; color: var(--text-muted); line-height: 2.2;">
+                    <li>✓ Executive Presence Coaching</li>
+                    <li>✓ Pre-Sales Strategy</li>
+                    <li>✓ High-EQ Team Building</li>
+                    <li>✓ Narrative & Storytelling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy">
+        <span class="label" style="text-align: center;">Methodology</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">The Three Pillars</h2>
+        
+        <div class="philosophy-grid">
+            <div class="card" data-aos="fade-up">
+                <h3>Strategic Evolution</h3>
+                <p>We don't just execute; we evolve. I challenge teams to "own the market" by providing a compelling vision that moves us beyond features to becoming the best in the business.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Servant Leadership</h3>
+                <p>Psychological safety is the bedrock of performance. I build trust by making it explicitly okay to try new things and bring new ideas to the table without fear.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>The GROW Method</h3>
+                <p>I focus on individual development using the GROW framework (Goal, Reality, Options, Will). This empowers SEs to define their own path to excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-box" data-aos="zoom-in">
+            <h2>Join the Expedition</h2>
+            <p style="margin: 20px 0 30px;">Ready to discuss leadership, strategy, or the outdoors?</p>
+            <a href="https://linkedin.com/in/gagemace" class="btn">Connect on LinkedIn</a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // EASTER EGG LOGIC
+        const trigger = document.getElementById('modeTrigger');
+        const body = document.body;
+        
+        trigger.addEventListener('click', () => {
+            body.classList.toggle('campfire-mode');
+        });
+    </script>
+</body>
+</html>
