@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Gage Mace | SaaS Solution Engineering Leader & Executive Coach</title>
-    <meta name="description" content="Gage Mace is a Solution Engineering Director specializing in SaaS pre-sales strategy, executive presence, and the TRAILS leadership framework.">
-    <meta name="keywords" content="Gage Mace, Solution Engineering, SaaS Leader, Executive Presence, Pre-sales Coach, TRAILS Framework, Tech Leadership">
+    <meta name="description" content="Gage Mace is a Solution Engineering Director specializing in SaaS pre-sales strategy, Agentic AI, executive presence, and the TRAILS leadership framework.">
+    <meta name="keywords" content="Gage Mace, Solution Engineering, Presales, Solutions, Agentic AI, Director of Solution Engineering, SaaS Leader, Executive Presence, Pre-sales Coach, Tech Leadership, Rustic Pathways Alumni">
     <meta name="author" content="Gage Mace">
     <link rel="canonical" href="https://www.gagemace.com/">
 
@@ -15,21 +15,38 @@
     <meta property="og:description" content="Bridging the gap between technical complexity and business impact. Discover the field notes of a modern leader.">
     <meta property="og:url" content="https://www.gagemace.com/">
     <meta property="og:image" content="https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true">
+    <meta property="og:site_name" content="Gage Mace Portfolio">
     
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Gage Mace",
-      "jobTitle": "Solution Engineering Leader",
+      "jobTitle": "Director of Solution Engineering",
       "url": "https://www.gagemace.com",
+      "image": "https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true",
       "sameAs": [
         "https://www.linkedin.com/in/gagemace/"
       ],
-      "image": "https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true",
-      "description": "Gage Mace is a Solution Engineering Leader bridging the gap between technical complexity and business impact.",
-      "knowsAbout": ["Solution Engineering", "SaaS", "Executive Coaching", "Leadership", "Pre-sales Strategy", "TRAILS Framework"],
-      "alumniOf": "Rustic Pathways"
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Rustic Pathways"
+      },
+      "knowsAbout": [
+        "Solution Engineering", 
+        "Presales",
+        "Solutions Architecture",
+        "Agentic AI",
+        "SaaS Strategy", 
+        "Director of Solution Engineering",
+        "Executive Coaching", 
+        "TRAILS Leadership Framework",
+        "Buyer Experience",
+        "Revenue Operations",
+        "Team Development"
+      ],
+      "description": "Gage Mace is a Solution Engineering Leader bridging the gap between technical complexity, Agentic AI, and business impact.",
+      "nationality": "American"
     }
     </script>
 
@@ -91,7 +108,16 @@
             transition: all 0.3s ease;
         }
         
-        .logo { font-weight: 700; font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; }
+        /* UPDATED LOGO STYLE: Now uses Playfair Display */
+        .logo { 
+            font-family: 'Playfair Display', serif; /* Changed from sans-serif */
+            font-weight: 700; 
+            font-size: 1.5rem; /* Increased slightly for impact */
+            letter-spacing: 0.5px; 
+            color: var(--accent-forest);
+            text-transform: uppercase; 
+        }
+        body.campfire-mode .logo { color: var(--accent-gold); }
         
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.95rem; font-weight: 500; }
@@ -111,7 +137,6 @@
         }
         .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; max-width: 1300px; align-items: center; }
         
-        /* Typography Scale for Hero */
         .hero-text h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 25px; }
         .hero-text p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 35px; max-width: 550px; }
         
@@ -221,11 +246,10 @@
             .gallery-container { column-count: 1; }
             h1 { font-size: 3rem; }
             
-            /* Mobile Nav Logic */
             nav { padding: 15px 5%; }
             .mobile-menu-btn { display: block; }
             .nav-links {
-                display: none; /* Hidden by default on mobile */
+                display: none; 
                 flex-direction: column;
                 position: absolute;
                 top: 60px;
@@ -247,7 +271,7 @@
         <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="navLinks">
             <a href="#about" onclick="toggleMenu()">About</a>
-            <a href="#philosophy" onclick="toggleMenu()">Approach</a>
+            <a href="#philosophy" onclick="toggleMenu()">Ethos</a>
             <a href="#gallery" onclick="toggleMenu()">Field Notes</a>
             <a href="https://www.linkedin.com/in/gagemace/" target="_blank" onclick="toggleMenu()">LinkedIn</a>
         </div>
@@ -288,26 +312,28 @@
     </section>
 
     <section id="philosophy">
-        <span class="label" style="text-align: center;">How I Help</span>
-        <h2 style="text-align: center; margin-bottom: 20px;">The Three Pillars</h2>
-        <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto;">My goal is to be a partner in growth, helping individuals and teams find their stride through clear values.</p>
+        <span class="label" style="text-align: center;">My Ethos</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">Guiding Principles</h2>
+        <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Leadership is not a title; it is an act of service. Here is how I approach the work.</p>
         
         <div class="philosophy-grid">
             
             <div class="card" data-aos="fade-up">
-                <h3>Clarifying the Vision</h3>
-                <p>It’s hard to move forward when the destination is blurry. I help teams connect their daily technical work to the bigger business picture, turning complexity into clear, achievable outcomes.</p>
+                <h3>Meaning from Chaos</h3>
+                <p>In complex environments, clarity is the ultimate asset. My role is to simplify the noise, lay the facts out flatly, and drive towards a clear outcome.</p>
+                <p style="font-size: 0.95rem; font-style: italic;">"Leadership is creating meaning from chaos and following curiosity to insight."</p>
             </div>
 
             <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <h3>Authentic Outcomes</h3>
-                <p>I believe in going beyond requirements to truly understand a client's business goals. By authentically aligning our solutions to their desired outcomes, we create buyer experiences that don't just solve problems—they genuinely delight.</p>
+                <h3>Progress Over Perfection</h3>
+                <p>My goal is to leave someone better off than when I found them. This means tapping into potential they may not see yet and empowering them to grow.</p>
+                <p style="font-size: 0.95rem; font-style: italic;">"It’s all about progress, not perfection. Enabling humans to capture their full potential."</p>
             </div>
 
             <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <h3>The TRAILS Framework</h3>
-                <p>Culture drives performance. I build high-integrity teams grounded in <strong>T</strong>rust, <strong>R</strong>espect, <strong>A</strong>ccountability, <strong>I</strong>ntegrity, <strong>L</strong>eadership, and <strong>S</strong>ervice.</p>
-                <p style="font-size: 0.9rem; margin-top: 15px;">These values act as our compass, ensuring we navigate challenges with character.</p>
+                <h3>Curiosity & Innovation</h3>
+                <p>Leaders ask questions over answering them. I believe in being an advocate who removes obstacles and builds workflows—like Agentic AI processes—that allow teams to focus on high-value work.</p>
+                <p style="font-size: 0.95rem; font-style: italic;">"Analyze, Train, Test, Deploy. We must constantly evolve."</p>
             </div>
         </div>
     </section>
