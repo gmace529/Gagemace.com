@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Active Listening | Gage Mace</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F9FAFB; --card-bg: #FFFFFF; --text-main: #1F2937; --text-muted: #4B5563;
+            --accent-forest: #2D3A3A; --accent-gold: #D4A373; --border-color: #E5E7EB;
+            --nav-bg: rgba(249, 250, 251, 0.95);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--accent-forest); }
+        
+        /* --- STICKY NAV (Matches Index) --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* Sticky */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .logo { 
+            font-family: 'Playfair Display', serif;
+            font-weight: 700; 
+            font-size: 1.5rem;
+            letter-spacing: 0.5px; 
+            color: var(--accent-forest);
+            text-transform: uppercase; 
+            text-decoration: none;
+        }
+        
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-size: 0.95rem; font-weight: 500; transition: color 0.3s;}
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        .mobile-menu-btn { display: none; cursor: pointer; font-size: 1.5rem; color: var(--text-main); }
+        
+        /* --- ARTICLE LAYOUT --- */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 120px 20px 80px; }
+        
+        .article-header { margin-bottom: 40px; text-align: center; }
+        .article-header h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 25px; }
+        
+        /* The Author Block at the Top */
+        .author-box { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 30px; }
+        .author-img { width: 50px; height: 50px; border-radius: 50%; background-image: url('https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true'); background-size: cover; background-position: center; }
+        .author-details { text-align: left; line-height: 1.3; }
+        .author-name { font-size: 1rem; font-weight: 600; color: var(--text-main); }
+        .article-meta { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* IMPORTANT: Replace the URL here for the article hero image */
+        .article-hero { width: 100%; height: 450px; background-image: url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80&w=1200'); background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);}
+        
+        .article-body p { font-size: 1.15rem; margin-bottom: 25px; color: #374151; }
+        .article-body h2 { font-size: 2rem; margin: 50px 0 20px; }
+        .article-body h3 { font-size: 1.4rem; margin: 30px 0 15px; }
+        .article-body ul { margin-bottom: 25px; margin-left: 20px; font-size: 1.15rem; color: #374151;}
+        .article-body li { margin-bottom: 10px; }
+        
+        .article-body blockquote { border-left: 4px solid var(--accent-gold); margin: 40px 0; padding: 20px 30px; background: rgba(212, 163, 115, 0.1); font-size: 1.2rem; font-style: italic; color: var(--accent-forest); border-radius: 0 8px 8px 0; }
+        
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 900px) {
+            nav { padding: 15px 5%; }
+            .mobile-menu-btn { display: block; }
+            .nav-links {
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: var(--nav-bg);
+                padding: 20px 0;
+                text-align: center;
+                border-bottom: 1px solid var(--border-color);
+            }
+            .nav-links.active { display: flex; } 
+            .article-header h1 { font-size: 2.5rem; }
+            .article-hero { height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Gage Mace</a>
+        <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html#about">About</a>
+            <a href="index.html#philosophy">Ethos</a>
+            <a href="index.html#strategy">Strategy</a> 
+            <a href="index.html#gallery">Field Notes</a>
+            <a href="https://www.linkedin.com/in/gagemace/" target="_blank">LinkedIn</a>
+        </div>
+    </nav>
+
+    <article class="article-container">
+        
+        <div class="article-header">
+            <h1>The Power of Active Listening</h1>
+            
+            <div class="author-box">
+                 <div class="author-img"></div>
+                 <div class="author-details">
+                     <div class="author-name">Gage Mace</div>
+                     <div class="article-meta">Nov 28, 2024 • 2 Min Read</div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="article-hero"></div>
+
+        <div class="article-body">
+            
+            <p>The best technology doesn't automatically win deals. The team that understands the prospect's problem best wins.</p>
+
+            <p>For Solution Engineers (SEs), active listening isn't just a "soft skill." It is a revenue-generating tool. It proves you understand their reality. It prevents you from giving a demo that completely misses the mark.</p>
+            
+            <p>Here is a simple, step-by-step process to turn active listening into a tactical advantage.</p>
+
+            <h2>Step 1: Avoid the "Feature Trap"</h2>
+            <p>The biggest mistake SEs make is listening just long enough to pick a feature to show.</p>
+            <ul>
+                <li><strong>The Trap:</strong> The prospect says, "Our reporting is slow." Your brain immediately thinks, "I'm going to show them the real-time dashboard module."</li>
+                <li><strong>The Fix:</strong> Stop. You cannot actively listen if you are already building your pitch. Listen to understand the problem, not to respond with a feature.</li>
+            </ul>
+
+            <h2>Step 2: Use the 3-Second Pause</h2>
+            <p>Active listening is also about what you don't say.</p>
+            
+            <p>When a prospect finishes explaining a problem, do not immediately jump in. Wait three full seconds. Silence feels awkward, but prospects will naturally rush to fill it. When they do, they usually reveal the actual business pain or emotional headache behind the technical issue.</p>
+
+            <h2>Step 3: Confirm with Tactical Phrasing</h2>
+            <p>Don’t just nod and say, "Makes sense." You must repeat their problem back to them using their exact vocabulary. This proves you were listening.</p>
+            
+            <p>Use these swipeable quotes on your next call:</p>
+            
+            <blockquote>
+                "If I'm hearing you correctly, the ripple effect of this old system is [X]. Is that right?"<br><br>
+                "It sounds like the core bottleneck isn't just the software, it's the time your team wastes doing [Y]. Did I capture that accurately?"<br><br>
+                "Let me pause. I want to make sure I completely understand this before we jump into the platform..."
+            </blockquote>
+
+            <h2>Step 4: Pivot to the Question Ladder</h2>
+            <p>This is the ultimate payoff. Active listening is how you earn the right to use the Question Ladder.</p>
+            
+            <p>You cannot ask hard, executive-level business questions until you prove you understand the surface-level technical problem. Once you summarize their pain (Step 3) and the prospect says, "Yes, exactly!"—you have earned the right to step down to the next rung of the ladder.</p>
+            
+            <p>How to make the pivot:</p>
+            
+            <blockquote>
+                "Since we agree that the reporting delay is the core technical issue, how is that impacting your daily operations?" 
+            </blockquote>
+            
+            <p>Now, you have successfully moved from a technical discovery question (Rung 1) to an operational impact question (Rung 2).</p>
+
+            <h2>Step 5: Master the AE-SE Dynamic</h2>
+            <p>Active listening applies internally, too.</p>
+            <p>The best SEs actively listen to their Account Executives (AEs) during the pre-call brief. During a live call, they listen closely to the AE's cues so they never step on each other's toes. Listen to your peers and leaders just as closely as you listen to your buyers.</p>
+
+            <h2>The Bottom Line</h2>
+            <p>Active listening prevents miscommunication. When you prove that you understand a prospect's pain before you share your screen, you stop being a vendor demonstrating features. You become a trusted advisor solving a business problem.</p>
+            
+            <p><strong>The Formula:</strong> Listen deeply ➔ Pause ➔ Confirm their words ➔ Climb down the Question Ladder ➔ Then show the solution.</p>
+
+        </div>
+    </article>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
