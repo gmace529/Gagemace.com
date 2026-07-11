@@ -108,11 +108,10 @@
             transition: all 0.3s ease;
         }
         
-        /* UPDATED LOGO STYLE: Now uses Playfair Display */
         .logo { 
-            font-family: 'Playfair Display', serif; /* Changed from sans-serif */
+            font-family: 'Playfair Display', serif;
             font-weight: 700; 
-            font-size: 1.5rem; /* Increased slightly for impact */
+            font-size: 1.5rem;
             letter-spacing: 0.5px; 
             color: var(--accent-forest);
             text-transform: uppercase; 
@@ -205,7 +204,7 @@
         .about-content h2 { font-size: 2.5rem; margin-bottom: 30px; line-height: 1.2; }
         .about-content p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text-muted); }
 
-        /* --- METHODOLOGY --- */
+        /* --- ETHOS --- */
         .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 60px; }
         .card {
             background: var(--card-bg); padding: 50px 40px; border-radius: 8px;
@@ -214,6 +213,53 @@
         .card:hover { border-color: var(--accent-gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .card h3 { margin-bottom: 20px; font-size: 1.5rem; }
         .card p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 15px; }
+
+        /* --- STRATEGY BLOG (NEW) --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .blog-tile {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .blog-tile:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--accent-gold);
+        }
+
+        .blog-thumb {
+            width: 100%;
+            height: 220px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
+        
+        .blog-meta { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; font-weight: 500;}
+        
+        .blog-title { font-size: 1.4rem; margin-bottom: 15px; line-height: 1.3; }
+        .blog-summary { font-size: 1rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 25px; flex-grow: 1;}
+
+        .blog-author { display: flex; align-items: center; gap: 12px; margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        .author-img { width: 40px; height: 40px; border-radius: 50%; background-size: cover; background-position: center; }
+        .author-details { display: flex; flex-direction: column; }
+        .author-name { font-size: 0.9rem; font-weight: 600; line-height: 1.2; }
+        .author-title { font-size: 0.8rem; color: var(--text-muted); }
 
         /* --- GALLERY --- */
         #gallery { padding-bottom: 150px; }
@@ -272,6 +318,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#about" onclick="toggleMenu()">About</a>
             <a href="#philosophy" onclick="toggleMenu()">Ethos</a>
+            <a href="#strategy" onclick="toggleMenu()">Strategy</a> 
             <a href="#gallery" onclick="toggleMenu()">Field Notes</a>
             <a href="https://www.linkedin.com/in/gagemace/" target="_blank" onclick="toggleMenu()">LinkedIn</a>
         </div>
@@ -338,6 +385,76 @@
         </div>
     </section>
 
+    <section id="strategy">
+        <span class="label" style="text-align: center;">Insights</span>
+        <h2 style="text-align: center; margin-bottom: 20px;">Strategy Notes</h2>
+        <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto;">Thoughts on pre-sales execution, leadership, and driving revenue.</p>
+
+        <div class="blog-grid">
+            
+            <a href="strategy-question-ladder.html" class="blog-tile" data-aos="fade-up">
+                <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>Nov 12, 2024</span>
+                        <span>3 min read</span>
+                    </div>
+                    <h3 class="blog-title">The Question Ladder: Deep Discovery</h3>
+                    <p class="blog-summary">How to dig deeper, quantify pain, and present the cure. Moving beyond surface-level discovery.</p>
+                    
+                    <div class="blog-author">
+                        <div class="author-img" style="background-image: url('https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true');"></div>
+                        <div class="author-details">
+                            <span class="author-name">Gage Mace</span>
+                            <span class="author-title">Solution Engineering Leader</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="strategy-active-listening.html" class="blog-tile" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>Nov 28, 2024</span>
+                        <span>2 min read</span>
+                    </div>
+                    <h3 class="blog-title">The Power of Active Listening</h3>
+                    <p class="blog-summary">Why repeating back what you hear is the fastest way to establish credibility and trust with buyers.</p>
+                    
+                    <div class="blog-author">
+                        <div class="author-img" style="background-image: url('https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true');"></div>
+                        <div class="author-details">
+                            <span class="author-name">Gage Mace</span>
+                            <span class="author-title">Solution Engineering Leader</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="strategy-talking-rates.html" class="blog-tile" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="blog-content">
+                    <div class="blog-meta">
+                        <span>Dec 05, 2024</span>
+                        <span>3 min read</span>
+                    </div>
+                    <h3 class="blog-title">Analyzing Talking Rates</h3>
+                    <p class="blog-summary">Stop "showing up and throwing up." How to use conversational analytics to ensure buyers are engaged.</p>
+                    
+                    <div class="blog-author">
+                        <div class="author-img" style="background-image: url('https://github.com/gmace529/Gagemace.com/blob/main/headshot.JPG?raw=true');"></div>
+                        <div class="author-details">
+                            <span class="author-name">Gage Mace</span>
+                            <span class="author-title">Solution Engineering Leader</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
     <section id="gallery">
         <span class="label">Perspectives</span>
         
@@ -353,29 +470,57 @@
             <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/vision.jpg?raw=true" alt="Gage Mace Keynote Speaker Vision" loading="lazy">
             </div>
+            
+            <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/gage%20mace%20alaska%20epic%20hike.jpg?raw=true" alt="Alaska Epic Hike" loading="lazy">
+            </div>
 
             <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/kennicott.jpg?raw=true" alt="Kennicott Glacier Trek" loading="lazy">
             </div>
 
             <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/Gage%20Mace%20Mountains.jpg?raw=true" alt="Mountain Trekking" loading="lazy">
+            </div>
+
+            <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/cambodia.jpg?raw=true" alt="Rustic Pathways Cambodia" loading="lazy">
+            </div>
+            
+            <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/Gage%20Mace%20Salmon.jpg?raw=true" alt="Salmon Catch" loading="lazy">
             </div>
 
             <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/grandcanyon.jpg?raw=true" alt="Grand Canyon Hiking" loading="lazy">
             </div>
+            
+            <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/Gage%20Mace%20alaska%20glacier%20kenai%20fjords.jpg?raw=true" alt="Alaska Glacier Kenai Fjords" loading="lazy">
+            </div>
         
             <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/visionwide.jpeg?raw=true" alt="Solution Engineering Leadership Talk" loading="lazy">
+            </div>
+            
+            <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/Gage%20Mace%20hiking2.jpg?raw=true" alt="Hiking Trails" loading="lazy">
             </div>
 
             <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/grandcanyonsunset.jpg?raw=true" alt="Grand Canyon Sunset" loading="lazy">
             </div>
+            
+            <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/Gage%20Mace%20Alaska%20water%20taxi.jpg?raw=true" alt="Alaska Water Taxi" loading="lazy">
+            </div>
 
             <div class="photo-item">
                 <img src="https://github.com/gmace529/Gagemace.com/blob/main/floatingvillage.jpg?raw=true" alt="Floating Village Cambodia" loading="lazy">
+            </div>
+            
+            <div class="photo-item">
+                <img src="https://github.com/gmace529/Gagemace.com/blob/main/Gage%20Mace%20Hiking.jpg?raw=true" alt="Hiking Adventures" loading="lazy">
             </div>
 
             <div class="photo-item">
@@ -488,31 +633,14 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 900, once: true, offset: 100 });
-
         const trigger = document.getElementById('modeTrigger');
         const body = document.body;
-
-        if (localStorage.getItem('theme') === 'campfire') {
-            body.classList.add('campfire-mode');
-        }
-        
+        if (localStorage.getItem('theme') === 'campfire') { body.classList.add('campfire-mode'); }
         trigger.addEventListener('click', () => {
             body.classList.toggle('campfire-mode');
-            
-            if (body.classList.contains('campfire-mode')) {
-                localStorage.setItem('theme', 'campfire');
-            } else {
-                localStorage.setItem('theme', 'day');
-            }
+            if (body.classList.contains('campfire-mode')) { localStorage.setItem('theme', 'campfire'); } else { localStorage.setItem('theme', 'day'); }
         });
-
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('active');
-        }
+        function toggleMenu() { const nav = document.getElementById('navLinks'); nav.classList.toggle('active'); }
     </script>
 </body>
-
 </html>
-
-
